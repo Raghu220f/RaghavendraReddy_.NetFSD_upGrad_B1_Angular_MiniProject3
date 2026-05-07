@@ -1,0 +1,32 @@
+<div class="container mt-4">
+
+  <h3 class="mb-4">Book Appointment</h3>
+
+  <div class="card shadow-sm p-4">
+
+    <div class="mb-3">
+      <label class="form-label">Select Doctor</label>
+
+      <select [(ngModel)]="doctorId" class="form-control">
+        <option value="0">Select Doctor</option>
+
+        <option *ngFor="let doctor of doctors" [value]="doctor.userId">
+          {{ doctor.name }} - {{ doctor.specialization }} (User Id: {{ doctor.userId }})
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Date</label>
+      <input 
+        [(ngModel)]="date" 
+        type="datetime-local" 
+        class="form-control"
+        [min]="minDateTime">
+    </div>
+
+    <button class="btn btn-success" (click)="book()">Book</button>
+
+  </div>
+
+</div>

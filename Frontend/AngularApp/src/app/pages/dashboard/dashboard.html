@@ -1,0 +1,60 @@
+<div class="dashboard-wrapper">
+
+  <div class="dashboard-header">
+    <p class="subtitle">Healthcare Management</p>
+    <h2>Welcome to Healthcare Dashboard</h2>
+    <p class="header-text">
+      Manage doctors, appointments and patient services from one place.
+    </p>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+
+    <div class="col-md-4">
+      <div class="dashboard-card">
+        <div class="icon-box blue">👨‍⚕️</div>
+        <h4>Doctors</h4>
+        <p>View all available doctors and their specializations.</p>
+        <a routerLink="/doctors" class="card-btn blue-btn">View Doctors</a>
+      </div>
+    </div>
+
+    <div class="col-md-4" *ngIf="role === 'Patient'">
+      <div class="dashboard-card">
+        <div class="icon-box green">📅</div>
+        <h4>Book Appointment</h4>
+        <p>Schedule your appointment with a doctor easily.</p>
+        <a routerLink="/book-appointment" class="card-btn green-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="col-md-4" *ngIf="role === 'Patient'">
+      <div class="dashboard-card">
+        <div class="icon-box yellow">📋</div>
+        <h4>My Appointments</h4>
+        <p>Track your bookings and appointment status.</p>
+        <a routerLink="/my-appointments" class="card-btn yellow-btn">View Appointments</a>
+      </div>
+    </div>
+
+    <div class="col-md-4" *ngIf="role === 'Doctor'">
+      <div class="dashboard-card">
+        <div class="icon-box teal">🩺</div>
+        <h4>Manage Appointments</h4>
+        <p>View and manage appointment requests from patients.</p>
+        <a routerLink="/doctor-appointments" class="card-btn teal-btn">Open Panel</a>
+      </div>
+    </div>
+
+    <div class="col-md-4" *ngIf="role === 'Admin'">
+      <div class="dashboard-card">
+        <div class="icon-box purple">➕</div>
+        <h4>Add Doctor</h4>
+        <p>Create and manage new doctor profiles easily.</p>
+        <a routerLink="/add-doctor" class="card-btn purple-btn">Add Doctor</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

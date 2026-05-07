@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <h3 class="mb-4">All Appointments</h3>
+
+  <div class="card shadow-sm p-3">
+    <table class="table table-bordered table-striped align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th>Id</th>
+          <th>Patient</th>
+          <th>Doctor</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th>Admin Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let a of appointments">
+          <td>{{ a.id }}</td>
+          <td>{{ a.patientId }}</td>
+          <td>{{ a.doctorId }}</td>
+          <td>{{ a.appointmentDate }}</td>
+
+          <td>
+            <span *ngIf="a.status == 1" class="badge bg-warning text-dark">Booked</span>
+            <span *ngIf="a.status == 2" class="badge bg-danger">Cancelled</span>
+            <span *ngIf="a.status == 3" class="badge bg-success">Completed</span>
+          </td>
+
+          <td>
+            <button 
+              *ngIf="a.status == 1"
+              class="btn btn-danger btn-sm"
+              (click)="cancel(a.id)">
+              Cancel
+            </button>
+
+            <span *ngIf="a.status != 1" class="text-muted">No action</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

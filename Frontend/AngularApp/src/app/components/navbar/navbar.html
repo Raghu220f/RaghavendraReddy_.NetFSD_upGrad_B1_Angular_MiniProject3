@@ -1,0 +1,49 @@
+<nav *ngIf="!auth.isLoggedIn()" class="navbar custom-navbar px-4 py-3">
+  <a class="navbar-brand brand-logo" routerLink="/">
+    <span class="brand-icon">⚕️</span>
+    <span>Healthcare System</span>
+  </a>
+
+  <div class="nav-actions">
+    <a class="btn btn-login" routerLink="/">Login</a>
+    <a class="btn btn-register" routerLink="/register">Register</a>
+  </div>
+</nav>
+
+<nav *ngIf="auth.isLoggedIn()" class="navbar navbar-expand-lg custom-navbar px-4 py-3">
+  <a class="navbar-brand brand-logo" routerLink="/dashboard">
+    <span class="brand-icon">⚕️</span>
+    <span>Healthcare System</span>
+  </a>
+
+  <div class="navbar-nav ms-4 gap-2">
+    <a class="nav-link custom-link" routerLink="/dashboard">Dashboard</a>
+    <a class="nav-link custom-link" routerLink="/doctors">Doctors</a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Admin'" routerLink="/add-doctor">
+      Add Doctor
+    </a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Patient'" routerLink="/patient-profile">
+      Profile
+    </a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Patient'" routerLink="/book-appointment">
+      Book Appointment
+    </a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Patient'" routerLink="/my-appointments">
+      My Appointments
+    </a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Doctor'" routerLink="/doctor-appointments">
+      Appointments
+    </a>
+
+    <a class="nav-link custom-link" *ngIf="role === 'Admin'" routerLink="/admin-appointments">
+      All Appointments
+    </a>
+  </div>
+
+  <button class="btn btn-logout ms-auto" (click)="logout()">Logout</button>
+</nav>

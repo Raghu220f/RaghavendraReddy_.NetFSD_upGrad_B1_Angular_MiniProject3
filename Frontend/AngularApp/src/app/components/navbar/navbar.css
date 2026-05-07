@@ -1,0 +1,108 @@
+.custom-navbar {
+  background: linear-gradient(135deg, #0f766e, #115e59);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  min-height: 72px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white !important;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 21px;
+}
+
+.custom-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 8px 14px !important;
+  border-radius: 999px;
+  transition: 0.25s ease;
+}
+
+.custom-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: white !important;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-login {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  padding: 8px 22px;
+  font-weight: 600;
+}
+
+.btn-login:hover {
+  background: white;
+  color: #0f766e;
+}
+
+.btn-register {
+  background: white;
+  color: #0f766e;
+  border-radius: 999px;
+  padding: 8px 22px;
+  font-weight: 700;
+  border: none;
+}
+
+.btn-register:hover {
+  background: #ecfdf5;
+  color: #064e3b;
+}
+
+.btn-logout {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: white;
+  border-radius: 999px;
+  padding: 8px 22px;
+  font-weight: 600;
+}
+
+.btn-logout:hover {
+  background: white;
+  color: #0f766e;
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  .btn-logout {
+    margin-left: 0 !important;
+  }
+
+  .nav-actions {
+    width: 100%;
+  }
+}

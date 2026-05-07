@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <h3>Add Doctor</h3>
+
+  <div class="card p-3 shadow-sm">
+    <div class="mb-3">
+      <label class="form-label">Doctor Name</label>
+      <input [(ngModel)]="name" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Specialization</label>
+      <input [(ngModel)]="specialization" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="addDoctor()">Add Doctor</button>
+  </div>
+</div>

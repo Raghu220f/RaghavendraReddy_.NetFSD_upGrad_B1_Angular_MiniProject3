@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #f5f7fa;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+body {
+  background: #f4f6f9;
+}
+
+.card {
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
